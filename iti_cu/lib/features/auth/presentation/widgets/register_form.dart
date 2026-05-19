@@ -20,6 +20,7 @@ class _RegisterFormState extends State<RegisterForm> {
   final _email = TextEditingController();
   final _pass = TextEditingController();
   final _confirm = TextEditingController();
+
   bool isLoading = false;
   String? error;
 
@@ -40,12 +41,14 @@ class _RegisterFormState extends State<RegisterForm> {
         children: [
           AppTextField(title: 'Full Name', controller: _name),
           const SizedBox(height: 12),
+
           AppTextField(
             title: 'Email Address',
             controller: _email,
             validator: AppValidator.validateEmail,
           ),
           const SizedBox(height: 12),
+
           AppTextField(
             title: 'Password',
             controller: _pass,
@@ -53,6 +56,7 @@ class _RegisterFormState extends State<RegisterForm> {
             validator: AppValidator.validatePassword,
           ),
           const SizedBox(height: 12),
+
           AppTextField(
             title: 'Confirm Password',
             controller: _confirm,
@@ -60,42 +64,61 @@ class _RegisterFormState extends State<RegisterForm> {
             validator: (v) =>
                 AppValidator.validateConfirmPassword(v, _pass.text),
           ),
+
           const SizedBox(height: 24),
+
           if (error != null)
             Text(error!, style: const TextStyle(color: Colors.red)),
+
           AppButton(
             label: isLoading ? 'Loading...' : 'Sign Up',
             onPressed: () async {
-              if (_formKey.currentState!.validate()) {
+              if (!_formKey.currentState!.validate()) return;
+
+              setState(() {
+                isLoading = true;
+                error = null;
+              });
+
+              try {
+                final user = await FirebaseAuthService.register(
+                  _email.text.trim(),
+                  _pass.text.trim(),
+                );
+
+                if (user == null) {
+                  setState(() {
+                    error = "Registration failed. Try again.";
+                    isLoading = false;
+                  });
+                  return;
+                }
+
+                await FirebaseFirestoreService.saveUserData(
+                  AppUser(
+                    name: _name.text.trim(),
+                    profilePic: '',
+                    token: '',
+                    email: _email.text.trim(),
+                    uid: user.uid,
+                  ),
+                );
+
+                if (!mounted) return;
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const MainScreen()),
+                );
+              } catch (e) {
                 setState(() {
-                  isLoading = true;
-                  error = null;
+                  error = e.toString();
                 });
-                try {
-                  final u = await FirebaseAuthService.register(
-                    _email.text.trim(),
-                    _pass.text,
-                  );
-                  if (u != null) {
-                    await FirebaseFirestoreService.saveUserData(
-                      AppUser(
-                        name: _name.text.trim(),
-                        profilePic: '',
-                        token: '',
-                        email: _email.text.trim(),
-                        uid: u.uid,
-                      ),
-                    );
-                  }
-                  if (!mounted) return;
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (_) => const MainScreen()),
-                  );
-                } catch (e) {
-                  setState(() => error = e.toString());
-                } finally {
-                  setState(() => isLoading = false);
+              } finally {
+                if (mounted) {
+                  setState(() {
+                    isLoading = false;
+                  });
                 }
               }
             },

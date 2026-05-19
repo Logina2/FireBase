@@ -1,7 +1,3 @@
-import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:iti_cu/core/common_model/app_user.dart';
@@ -10,6 +6,7 @@ import 'package:iti_cu/core/services/chat_service.dart';
 import 'package:iti_cu/core/services/firebase_auth_service.dart';
 import 'package:iti_cu/core/services/firebase_user_status.dart';
 import 'package:iti_cu/core/services/user_manager.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' show QuerySnapshot;
 
 class PrivateChatScreen extends StatefulWidget {
   final AppUser otherUser;
@@ -89,16 +86,19 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
             StreamBuilder<DatabaseEvent>(
               stream: FirebaseUserStatus.getStatus(widget.otherUser.uid),
               builder: (context, snapshot) {
-                if (!snapshot.hasData || snapshot.data?.snapshot.value == null)
+                if (!snapshot.hasData ||
+                    snapshot.data?.snapshot.value == null) {
                   return const Text('Offline', style: TextStyle(fontSize: 12));
+                }
                 final map = Map<String, dynamic>.from(
                   snapshot.data!.snapshot.value as Map,
                 );
-                if (map['typing'] == true)
+                if (map['typing'] == true) {
                   return const Text(
                     'typing...',
                     style: TextStyle(color: AppColors.cyan, fontSize: 12),
                   );
+                }
                 return Text(
                   map['online'] == true ? 'Online' : 'Offline',
                   style: const TextStyle(fontSize: 12),
@@ -114,8 +114,9 @@ class _PrivateChatScreenState extends State<PrivateChatScreen> {
             child: StreamBuilder<QuerySnapshot>(
               stream: ChatService.getMessages(chatId),
               builder: (context, snap) {
-                if (!snap.hasData)
+                if (!snap.hasData) {
                   return const Center(child: CircularProgressIndicator());
+                }
                 final msgs = snap.data!.docs;
                 return ListView.builder(
                   controller: _scroll,

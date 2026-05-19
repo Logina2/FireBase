@@ -46,6 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '865362398009',
     projectId: 'fir-f1450',
     authDomain: 'fir-f1450.firebaseapp.com',
+    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
     storageBucket: 'fir-f1450.firebasestorage.app',
     measurementId: 'G-DMRYFGT81W',
   );
@@ -55,6 +56,7 @@ class DefaultFirebaseOptions {
     appId: '1:865362398009:android:c733e9197c8cff356376e8',
     messagingSenderId: '865362398009',
     projectId: 'fir-f1450',
+    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
     storageBucket: 'fir-f1450.firebasestorage.app',
   );
 
@@ -63,6 +65,7 @@ class DefaultFirebaseOptions {
     appId: '1:865362398009:ios:4a7732759c887fe66376e8',
     messagingSenderId: '865362398009',
     projectId: 'fir-f1450',
+    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
     storageBucket: 'fir-f1450.firebasestorage.app',
     iosBundleId: 'com.example.itiCu',
   );
@@ -72,6 +75,7 @@ class DefaultFirebaseOptions {
     appId: '1:865362398009:ios:4a7732759c887fe66376e8',
     messagingSenderId: '865362398009',
     projectId: 'fir-f1450',
+    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
     storageBucket: 'fir-f1450.firebasestorage.app',
     iosBundleId: 'com.example.itiCu',
   );
@@ -82,7 +86,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '865362398009',
     projectId: 'fir-f1450',
     authDomain: 'fir-f1450.firebaseapp.com',
+    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
     storageBucket: 'fir-f1450.firebasestorage.app',
     measurementId: 'G-B5JSHYJF5G',
   );
+
 }

@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:iti_cu/features/main/presentation/ui_models/nav_item.dart';
 import 'package:iti_cu/features/account/presentation/ui_models/account_item.dart';
 import 'package:iti_cu/core/resource/app_icons.dart';
 import 'package:iti_cu/features/home/presentation/screens/home_screen.dart';
 import 'package:iti_cu/features/chat/presentation/screens/chat_screen.dart';
-import 'package:iti_cu/features/notifications/presentation/screens/notifications_screen.dart';
 import 'package:iti_cu/features/account/presentation/screens/account_screen.dart';
 
 class UiConstants {
@@ -15,7 +15,14 @@ class UiConstants {
     NavItem(
       icon: AppIcons.notifications,
       label: 'Alerts',
-      child: const NotificationsScreen(),
+      child: const Scaffold(
+        body: Center(
+          child: Text(
+            'Notifications Coming Soon',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
     ),
     NavItem(
       icon: AppIcons.account,

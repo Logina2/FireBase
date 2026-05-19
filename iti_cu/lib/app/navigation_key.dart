@@ -1,3 +1,8 @@
 import 'package:flutter/material.dart';
 
-final GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
+class NavigationKey {
+  NavigationKey._();
+
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+}

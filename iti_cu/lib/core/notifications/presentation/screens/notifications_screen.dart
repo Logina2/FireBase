@@ -9,7 +9,7 @@ class NotificationsScreen extends StatelessWidget {
       body: Center(
         child: Text(
           'No Notifications Yet',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );
