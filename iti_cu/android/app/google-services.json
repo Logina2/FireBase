@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "865362398009",
-    "firebase_url": "https://fir-f1450-default-rtdb.firebaseio.com",
-    "project_id": "fir-f1450",
-    "storage_bucket": "fir-f1450.firebasestorage.app"
+    "project_number": "649683202154",
+    "project_id": "chatapp-2fcb9",
+    "storage_bucket": "chatapp-2fcb9.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:865362398009:android:c733e9197c8cff356376e8",
+        "mobilesdk_app_id": "1:649683202154:android:4e0b675d11766c4c3fda13",
         "android_client_info": {
           "package_name": "com.example.iti_cu"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCgBGbTicV8x66woFqOmpFyRhSbD_ty3PE"
+          "current_key": "AIzaSyC9nlGR84xjVPloIJrP_MMLEECdo61lAbc"
         }
       ],
       "services": {

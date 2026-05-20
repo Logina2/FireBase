@@ -41,54 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBkRr-g1pkTQvHC5_YSb96WKDa54nseg1Q',
-    appId: '1:865362398009:web:5b92cf9b4a5726536376e8',
-    messagingSenderId: '865362398009',
-    projectId: 'fir-f1450',
-    authDomain: 'fir-f1450.firebaseapp.com',
-    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
-    storageBucket: 'fir-f1450.firebasestorage.app',
-    measurementId: 'G-DMRYFGT81W',
+    apiKey: 'AIzaSyBBeKJU4-ru2liXJ4k6hbNxyuHNoI3PiSM',
+    appId: '1:649683202154:web:ec951df93c7bd0d13fda13',
+    messagingSenderId: '649683202154',
+    projectId: 'chatapp-2fcb9',
+    authDomain: 'chatapp-2fcb9.firebaseapp.com',
+    storageBucket: 'chatapp-2fcb9.firebasestorage.app',
+    measurementId: 'G-6P9QZLP6KX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCgBGbTicV8x66woFqOmpFyRhSbD_ty3PE',
-    appId: '1:865362398009:android:c733e9197c8cff356376e8',
-    messagingSenderId: '865362398009',
-    projectId: 'fir-f1450',
-    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
-    storageBucket: 'fir-f1450.firebasestorage.app',
+    apiKey: 'AIzaSyC9nlGR84xjVPloIJrP_MMLEECdo61lAbc',
+    appId: '1:649683202154:android:4e0b675d11766c4c3fda13',
+    messagingSenderId: '649683202154',
+    projectId: 'chatapp-2fcb9',
+    storageBucket: 'chatapp-2fcb9.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBUaA-bKcIErUC8uQelSoqu08zte6dKpO4',
-    appId: '1:865362398009:ios:4a7732759c887fe66376e8',
-    messagingSenderId: '865362398009',
-    projectId: 'fir-f1450',
-    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
-    storageBucket: 'fir-f1450.firebasestorage.app',
+    apiKey: 'AIzaSyD4VJe8wvguL7vd3N_P3mBKfjExFbf9XHs',
+    appId: '1:649683202154:ios:0cffafb22e4a33f43fda13',
+    messagingSenderId: '649683202154',
+    projectId: 'chatapp-2fcb9',
+    storageBucket: 'chatapp-2fcb9.firebasestorage.app',
     iosBundleId: 'com.example.itiCu',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBUaA-bKcIErUC8uQelSoqu08zte6dKpO4',
-    appId: '1:865362398009:ios:4a7732759c887fe66376e8',
-    messagingSenderId: '865362398009',
-    projectId: 'fir-f1450',
-    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
-    storageBucket: 'fir-f1450.firebasestorage.app',
+    apiKey: 'AIzaSyD4VJe8wvguL7vd3N_P3mBKfjExFbf9XHs',
+    appId: '1:649683202154:ios:0cffafb22e4a33f43fda13',
+    messagingSenderId: '649683202154',
+    projectId: 'chatapp-2fcb9',
+    storageBucket: 'chatapp-2fcb9.firebasestorage.app',
     iosBundleId: 'com.example.itiCu',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBkRr-g1pkTQvHC5_YSb96WKDa54nseg1Q',
-    appId: '1:865362398009:web:33c257c17998df676376e8',
-    messagingSenderId: '865362398009',
-    projectId: 'fir-f1450',
-    authDomain: 'fir-f1450.firebaseapp.com',
-    databaseURL: 'https://fir-f1450-default-rtdb.firebaseio.com',
-    storageBucket: 'fir-f1450.firebasestorage.app',
-    measurementId: 'G-B5JSHYJF5G',
+    apiKey: 'AIzaSyBBeKJU4-ru2liXJ4k6hbNxyuHNoI3PiSM',
+    appId: '1:649683202154:web:ac670220b51f05803fda13',
+    messagingSenderId: '649683202154',
+    projectId: 'chatapp-2fcb9',
+    authDomain: 'chatapp-2fcb9.firebaseapp.com',
+    storageBucket: 'chatapp-2fcb9.firebasestorage.app',
+    measurementId: 'G-32TYM2JMQB',
   );
-
 }

@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:iti_cu/app/my_app.dart';
-import 'package:iti_cu/app/firebase_options.dart';
+import 'package:iti_cu/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +11,10 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   if (!kIsWeb) {
-    FirebaseDatabase.instance.setPersistenceEnabled(true);
+    FirebaseDatabase.instanceFor(
+      app: Firebase.app(),
+      databaseURL: 'https://chatapp-2fcb9-default-rtdb.firebaseio.com',
+    ).setPersistenceEnabled(true);
   }
 
   runApp(const MyApp());
